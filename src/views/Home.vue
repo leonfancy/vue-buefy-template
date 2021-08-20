@@ -1,18 +1,92 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld/>
+  <div>
+    <b-navbar wrapper-class="container is-max-desktop">
+      <template #brand>
+        <b-navbar-item tag="router-link" :to="{ path: '/' }">
+          <img src="../assets/logo.png">
+          <div class="ml-2 has-text-weight-bold is-size-5 has-text-primary">Vue Template</div>
+        </b-navbar-item>
+      </template>
+      <template #start>
+        <b-navbar-item href="#">
+          Home
+        </b-navbar-item>
+        <b-navbar-item href="#">
+          Documentation
+        </b-navbar-item>
+        <b-navbar-dropdown label="Info">
+          <b-navbar-item href="#">
+            About
+          </b-navbar-item>
+          <b-navbar-item href="#">
+            Contact
+          </b-navbar-item>
+        </b-navbar-dropdown>
+      </template>
+
+      <template #end>
+        <b-navbar-item tag="div">
+          <div class="buttons">
+            <a class="button is-primary">
+              <strong>Sign up</strong>
+            </a>
+            <a class="button is-light">
+              Log in
+            </a>
+          </div>
+        </b-navbar-item>
+      </template>
+    </b-navbar>
+    <section class="hero is-link is-fullheight-with-navbar">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-vcentered is-variable  is-6">
+            <div class="column">
+              <p class="title">
+                Vue Template Built with Buefy.js
+              </p>
+              <p class="subtitle">
+                A Vue template project that help to quickly create web application. Powered by Buefy.js and Bulma.
+              </p>
+              <p>
+                <b-button type="is-primary is-light" native-type="submit"><strong>Sign up</strong></b-button>
+              </p>
+            </div>
+            <div class="column">
+              <form @submit.prevent="login" class="box">
+                <b-field label="Email" use-html5-validation>
+                  <b-input required v-model="email" placeholder="Email" type="email" icon="envelope"
+                           validation-message="Not a valid email"/>
+                </b-field>
+
+                <b-field label="Password">
+                  <b-input required v-model="password" placeholder="Password" type="password" icon="key"
+                           password-reveal></b-input>
+                </b-field>
+
+                <b-button type="is-primary" native-type="submit">Login</b-button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
+  data () {
+    return {
+      email: '',
+      password: ''
+    }
+  },
+  methods: {
+    login () {
+      console.log("login")
+    }
   }
 }
 </script>
