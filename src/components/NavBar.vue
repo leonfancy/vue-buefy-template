@@ -26,12 +26,8 @@
     <template #end>
       <b-navbar-item tag="div">
         <div class="buttons">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-light">
-            Log in
-          </a>
+          <b-button type="is-primary" tag="router-link" to="/register"><strong>Sign up</strong></b-button>
+          <b-button type="is-light" tag="router-link" to="/login">Login</b-button>
         </div>
       </b-navbar-item>
     </template>
