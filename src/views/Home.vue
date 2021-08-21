@@ -54,13 +54,15 @@
             </div>
             <div class="column">
               <form @submit.prevent="login" class="box">
-                <b-field label="Email" use-html5-validation>
+                <b-field label="Email">
                   <b-input required v-model="email" placeholder="Email" type="email" icon="envelope"
+                           :use-html5-validation="enableValidation"
                            validation-message="Not a valid email"/>
                 </b-field>
 
                 <b-field label="Password">
                   <b-input required v-model="password" placeholder="Password" type="password" icon="key"
+                           :use-html5-validation="enableValidation"
                            password-reveal></b-input>
                 </b-field>
 
@@ -80,11 +82,13 @@ export default {
   data () {
     return {
       email: '',
-      password: ''
+      password: '',
+      enableValidation: false
     }
   },
   methods: {
     login () {
+      // this.enableValidation = true
       console.log("login")
     }
   }
