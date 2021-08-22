@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer has-background-light">
+  <footer class="footer">
     <div class="content has-text-centered">
       <p>2021 &copy; <a href="https://chenliang.org" target="_blank">Chen Liang</a></p>
       <p>
