@@ -12,7 +12,7 @@
           <div class="block has-text-centered is-size-5">Login to start</div>
           <login-form></login-form>
           <p>Don't have an account?
-            <router-link to="/register" class="has-text-primary">Sign up</router-link>
+            <router-link to="/signup" class="has-text-primary">Sign up</router-link>
           </p>
         </div>
       </div>

@@ -13,7 +13,7 @@
                 A Vue template project that help to quickly create web application. Powered by Buefy.js and Bulma.
               </p>
               <p>
-                <b-button type="is-primary is-light" tag="router-link" to="/register"><strong>Sign up</strong></b-button>
+                <b-button type="is-primary is-light" tag="router-link" to="/signup"><strong>Sign up</strong></b-button>
               </p>
             </div>
             <div class="column">

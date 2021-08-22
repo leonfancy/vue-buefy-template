@@ -1,12 +1,12 @@
 <template>
   <form @submit.prevent="login" class="box">
     <b-field label="Email">
-      <b-input required v-model="email" placeholder="Email" type="email" icon="envelope"
+      <b-input required v-model="credential.email" placeholder="Email" type="email" icon="envelope"
                :use-html5-validation="false" validation-message="Not a valid email"/>
     </b-field>
 
     <b-field label="Password">
-      <b-input required v-model="password" placeholder="Password" type="password" icon="key"
+      <b-input required v-model="credential.password" placeholder="Password" type="password" icon="key"
                :use-html5-validation="false" password-reveal></b-input>
     </b-field>
 
@@ -19,13 +19,16 @@ export default {
   name: "LoginForm",
   data() {
     return {
-      email: '',
-      password: ''
+      credential: {
+        email: '',
+        password: ''
+      }
     }
   },
   methods: {
     login() {
-      console.log("login")
+      this.$store.dispatch('auth/login', this.credential)
+      this.$router.push("/")
     }
   }
 }

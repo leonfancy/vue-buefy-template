@@ -69,7 +69,8 @@ export default {
         this.errorMessage = 'Password confirmation is wrong'
         return
       }
-      console.log("Sign up")
+
+      this.$store.dispatch('auth/signup', this.user)
     }
   }
 }

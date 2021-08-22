@@ -24,9 +24,17 @@
     </template>
 
     <template #end>
-      <b-navbar-item tag="div">
+      <b-navbar-dropdown  v-if="isLoggedIn" :label="user.name" right>
+        <b-navbar-item tag="router-link" :to="{path: '/setting'}">
+          Setting
+        </b-navbar-item>
+        <b-navbar-item @click="logout">
+          Logout
+        </b-navbar-item>
+      </b-navbar-dropdown>
+      <b-navbar-item v-else tag="div">
         <div class="buttons">
-          <b-button type="is-primary" tag="router-link" to="/register"><strong>Sign up</strong></b-button>
+          <b-button type="is-primary" tag="router-link" to="/signup"><strong>Sign up</strong></b-button>
           <b-button type="is-light" tag="router-link" to="/login">Login</b-button>
         </div>
       </b-navbar-item>
@@ -35,8 +43,17 @@
 </template>
 
 <script>
+import {mapState} from "vuex";
+
 export default {
-  name: "NavBar"
+  name: "NavBar",
+  computed: mapState('auth', ["user", "isLoggedIn"]),
+  methods: {
+    logout() {
+      this.$store.dispatch('auth/logout')
+      this.$router.push("/")
+    }
+  }
 }
 </script>
 
