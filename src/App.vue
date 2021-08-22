@@ -4,5 +4,15 @@
   </div>
 </template>
 
+<script>
+
+export default {
+  name: "App",
+  mounted() {
+    this.$store.dispatch('auth/loadUser')
+  }
+}
+</script>
+
 <style>
 </style>

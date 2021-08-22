@@ -22,10 +22,6 @@ export default {
   actions: {
     login({commit}, data) {
       commit('setLoggedIn', data.email)
-      commit('setUser', {
-        name: "Liang",
-        email: data.email
-      })
       // return new Promise((resolve, reject) => {
       //   client.post('/login', data)
       //     .then(resp => {
@@ -40,10 +36,6 @@ export default {
     },
     signup({commit}, data) {
       commit('setLoggedIn', data.email)
-      commit('setUser', {
-        name: data.name,
-        email: data.email
-      })
       // return new Promise((resolve, reject) => {
       //   client.post('/signup', data)
       //     .then(resp => {
@@ -59,5 +51,11 @@ export default {
     logout({commit}) {
       commit('logout')
     },
+    loadUser({commit}) {
+      commit('setUser', {
+        name: 'Liang',
+        email: 'slimhigh@gmail.com'
+      })
+    }
   },
 }
