@@ -1,14 +1,11 @@
 <template>
-  <div>
-    <nav-bar></nav-bar>
+  <container>
     <user-box></user-box>
-    <v-footer></v-footer>
-  </div>
+  </container>
 </template>
 
 <script>
-import NavBar from "@/components/NavBar";
-import VFooter from "@/components/VFooter";
+import Container from "@/components/Container";
 import UserBox from "@/components/UserBox";
 
 import {mapState} from "vuex";
@@ -17,8 +14,7 @@ export default {
   name: 'UserHome',
   components: {
     UserBox,
-    NavBar,
-    VFooter
+    Container
   },
   computed: mapState('auth', ['isLoggedIn'])
 }

@@ -1,14 +1,11 @@
 <template>
-  <div>
-    <nav-bar></nav-bar>
+  <container>
     <landing-home></landing-home>
-    <v-footer></v-footer>
-  </div>
+  </container>
 </template>
 
 <script>
-import NavBar from "@/components/NavBar";
-import VFooter from "@/components/VFooter";
+import Container from "@/components/Container";
 import LandingHome from "@/components/LandingHome";
 
 import {mapState} from "vuex";
@@ -17,8 +14,7 @@ export default {
   name: 'Home',
   components: {
     LandingHome,
-    NavBar,
-    VFooter
+    Container
   },
   computed: mapState('auth', ['isLoggedIn'])
 }
