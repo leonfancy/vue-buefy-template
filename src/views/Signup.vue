@@ -71,7 +71,7 @@ export default {
       }
 
       this.$store.dispatch('auth/signup', this.user)
-      this.$router.push("/")
+      this.$router.push({name: "UserHome"})
     }
   }
 }

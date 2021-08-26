@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav-bar></nav-bar>
-    <landing-home></landing-home>
+    <user-box></user-box>
     <v-footer></v-footer>
   </div>
 </template>
@@ -9,14 +9,14 @@
 <script>
 import NavBar from "@/components/NavBar";
 import VFooter from "@/components/VFooter";
-import LandingHome from "@/components/LandingHome";
+import UserBox from "@/components/UserBox";
 
 import {mapState} from "vuex";
 
 export default {
-  name: 'Home',
+  name: 'UserHome',
   components: {
-    LandingHome,
+    UserBox,
     NavBar,
     VFooter
   },

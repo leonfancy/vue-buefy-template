@@ -24,7 +24,7 @@
     </template>
 
     <template #end>
-      <b-navbar-dropdown  v-if="isLoggedIn" :label="user.name" right>
+      <b-navbar-dropdown v-if="isLoggedIn" :label="user.name" right>
         <b-navbar-item tag="router-link" :to="{path: '/setting'}">
           Setting
         </b-navbar-item>
@@ -51,7 +51,9 @@ export default {
   methods: {
     logout() {
       this.$store.dispatch('auth/logout')
-      this.$router.push("/")
+      if (this.$route.name !== "Home") {
+        this.$router.push({name: "Home"})
+      }
     }
   }
 }

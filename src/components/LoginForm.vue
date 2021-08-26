@@ -28,7 +28,7 @@ export default {
   methods: {
     login() {
       this.$store.dispatch('auth/login', this.credential)
-      this.$router.push("/")
+      this.$router.push({name: "UserHome"})
     }
   }
 }

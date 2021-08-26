@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: "UserHome"
+  name: "UserBox"
 }
 </script>
 
